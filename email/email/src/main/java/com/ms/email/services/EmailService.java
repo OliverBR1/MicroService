@@ -3,7 +3,7 @@ package com.ms.email.services;
 import com.ms.email.enuns.StatusEmail;
 import com.ms.email.models.EmailModel;
 import com.ms.email.repositories.EmailRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -43,7 +43,8 @@ public class EmailService {
         } catch (MailException e) {
             emailModel.setStatusEmail(StatusEmail.ERROR);
         } finally {
-             return emailRepository.save(emailModel);
+             emailRepository.save(emailModel);
         }
+        return emailModel;
     }
 }
