@@ -1,8 +1,6 @@
 package com.ms.email.models;
 
-import com.ms.email.consumers.EmailConsumer;
 import com.ms.email.enuns.StatusEmail;
-import com.ms.email.services.EmailService;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,5 +27,6 @@ public class EmailModel implements Serializable {
     private String text;
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
+
 
 }
